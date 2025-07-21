@@ -27,11 +27,9 @@ def receive_messages():
             msg = client.recv(4096).decode()
             if not msg:
                 break
-            
             # Create the message panel first
             if ":" in msg:
                 sender, content = msg.split(":", 1)
-                print(sender)
                 sender = "Me" if sender == f"<{name}>" else sender
                 now = datetime.now().strftime('%H:%M:%S')
                 panel = Panel(Text(content.strip(), justify="left"), title=f"[bold green][{now}]{sender}[/bold green]", border_style="blue")
@@ -52,7 +50,7 @@ def send_messages():
             message = console.input()
             sys.stdout.write('\033[F')  # Move cursor up 1 line
             sys.stdout.write('\r' + ' ' * 100 + '\r')  # Clear the line
-            if message.lower() == 'exit':
+            if message.lower().strip() == 'exit':
                 client.close()
                 break
             if message.strip():

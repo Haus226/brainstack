@@ -1,0 +1,15 @@
+{
+	"servers": {
+		"mcp_first_glance": {
+			"type": "stdio",
+			"command": "D:\\brainstack\\.venv\\Scripts\\python.exe",
+			"args": ["D:\\brainstack\\mcp\\main.py"]
+		},
+		"stateful_server": {
+			"type": "stdio",
+			"command": "D:\\brainstack\\.venv\\Scripts\\python.exe",
+			"args": ["D:\\brainstack\\mcp\\stateful_server.py"]
+		}
+	},
+	"inputs": []
+}
